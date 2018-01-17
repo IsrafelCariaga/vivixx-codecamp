@@ -1,0 +1,13 @@
+body {
+	background-color: #006D5B;
+}
+
+h1 {
+	font-size: 20px;
+	color: #ff00f2;
+	/* this is a comment */
+	}
+
+p{
+	color: yellow;
+}
