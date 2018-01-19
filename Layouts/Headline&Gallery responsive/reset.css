@@ -1,0 +1,11 @@
+.featured-image(max-width: 979px) {
+ /* Selectors and styles affecting screens UP TO 979px (Desktop) */
+}
+
+.featured-image.last(max-width: 767px) {
+   /* Selectors and styles affecting screens UP TO 767px (Tablet) */
+}
+
+.featured-image img(max-width: 480px) {
+   /* Selectors and styles affecting screens UP TO 480px (Phone) */
+}
