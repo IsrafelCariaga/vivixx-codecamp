@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+   <title>Events Management &mdash; Information</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   <link href="style2.css" rel="stylesheet">
+
+  <title>adminPage</title>
+</head>
+
+<body>
+
+   <div>
+      <header>
+         <h1>VIVIXX</h1>
+         <h2>Event Management</h2>
+         <h3>Fill out form below</h3>
+      </header>
+   </div>
+
+   <img src="img/logo.png" alt="img/logo.png">
+   <div id="temp"></div>
+<form class="form1">
+   <table>
+
+   <tr>
+      <td>Event Name :  </td>
+      <td><input type="text" id="eventName"></td>
+   </tr>
+
+   <tr>
+      <td>Location : </td>
+      <td>  <input type="text" id="locStreet" name="Street" placeholder="Street">
+            <input type="text" id="locCity" name="City" placeholder="City"></td>  
+   </tr>
+
+   <tr>
+      <td>Start Date : </td>
+      <td><input type="date" id="strDate"></td>
+   </tr>
+
+   <tr>
+      <td>End Date : </td>
+      <td><input type="date" id="endDate"></td>
+   </tr>
+
+   <tr>
+      <td>Start Time : </td>
+      <td><input type="Time" id="strTime"></td>      
+   </tr>
+
+   <tr>
+      <td>End Time : </td>
+      <td><input type="Time" id="endTime"></td>      
+   </tr>
+
+   <tr>
+      <td>Event Fee : </td>
+      <td><div class="input-group"> 
+        <div class="input-group-addon">₱</div>
+        <input type="number" id="eventFee" placeholder="0.00" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" /></td>
+    </div> 
+   </tr>
+
+   </table>
+
+   <div class="submit">
+         
+         <input style="width: 150px; float: right; padding: 17px; cursor: pointer; font-weight: bold; background:#ffca26; margin-right: 90px; margin-top: 50px; color:#208099; border-radius: 50px; border: 1px solid #999; font-size: 125%;" type="button" value="NEXT" onclick="window.location.href='third.html'" />
+         <input style="width: 150px; float: right; padding: 17px; cursor: pointer; font-weight: bold; background:#ffca26; margin-right: 90px; margin-top: 50px; color:#208099; border-radius: 50px; border: 1px solid #999; font-size: 125%;" type="button" value="SUBMIT" onclick="populateStorage()" />
+   </div>
+
+</form>
+
+<script>
+   function populateStorage() {
+
+      var evntName = document.querySelector('#eventName').value;
+      var locStr = document.querySelector('#locStreet').value;
+      var locCty = document.querySelector('#locCity').value;
+      var startDay = document.querySelector('#strDate').value;
+      var endDay = document.querySelector('#endDate').value;
+      var startHr = document.querySelector('#strTime').value;
+      var endHr = document.querySelector('#endTime').value;
+      var fee = document.querySelector('#eventFee').value;
+
+      localStorage.setItem('event', evntName);
+      localStorage.setItem('street', locStr);
+      localStorage.setItem('city', locCty);
+      localStorage.setItem('strdt', startDay);
+      localStorage.setItem('endt', endDay);
+      localStorage.setItem('strtm', startHr);
+      localStorage.setItem('endtm', endHr);
+      localStorage.setItem('evntfee', fee);
+
+      alert("Information submitted! Thank you!");
+}
+
+
+</script>
+
+
+</body>
+</html>

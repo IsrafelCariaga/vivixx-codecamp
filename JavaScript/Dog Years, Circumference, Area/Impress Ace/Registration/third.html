@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Events Management &mdash; Registration</title>
+		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container text-center">
+			<div class="row">
+
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="logoLion"><img src="img/logo.png"></div>
+					<a href="pre-reg.html" class="btn btn-lg btn-primary mainButtons" role="button">Pre-registered</a>
+					<a href="walk-in.html" class="btn btn-lg btn-primary mainButtons" role="button">Walk-in</a>
+					
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="info">
+						<div id="eventName"></div>
+						<div id="location"></div>
+						<div id="date"></div>
+						<div id="time"></div>
+						<div id="fee"></div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>		
+		</div><!-- end of container-fluid-->
+
+		<script>
+			
+			var evnt = localStorage.getItem('event');
+  			var strt = localStorage.getItem('street');
+  			var cty = localStorage.getItem('city');
+  			var strtdy = localStorage.getItem('strdt');
+  			var nddy = localStorage.getItem('endt');
+  			var strttm = localStorage.getItem('strtm');
+  			var ndtm = localStorage.getItem('endtm');
+  			var evtf = localStorage.getItem('evntfee');
+
+  			document.getElementById('eventName').innerHTML = "EVENT NAME: " +evnt;
+  			document.getElementById('location').innerHTML = "VENUE: " +strt+ ", "+cty;
+  			document.getElementById('date').innerHTML = "DATE: "+strtdy+ " to " +nddy;
+  			document.getElementById('time').innerHTML = "TIME: "+strttm+ " to " +ndtm;
+  			document.getElementById('fee').innerHTML = "EVENT FEE: Php" +evtf;
+  		
+		</script>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+
+
+</html>

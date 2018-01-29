@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Events Management &mdash; Pre-registered Attendees</title>
+		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container text-center">
+			<div class="row">		
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="logoLion"><img src="img/logo.png"></div><br />
+						<div class="form-group">
+      						<input type="text" class="form-control nameForm" id="cta" placeholder="Enter your name"><br />
+      						<button class="btn btn-lg btn-primary mainButtons" onclick="return getName()" data-toggle="modal" data-target="#showAttendee">Submit</button>
+      						<a href="third.html" class="btn btn-lg btn-primary mainButtons" role="button">Cancel</a>
+    					</div>
+				</div>
+				<div class="col-md-4"></div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="showAttendee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="nameAttendee"></h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div id="message"></div><br/>
+				        <div id="message2"></div>
+				        <div id="message3"></div><br/>
+				        <div id="message4"></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+			<script>
+				
+
+				function getName(){
+					var attend = [{
+							"name": "Beyonce Knowles",
+							"address": "#40, Houston, Texas, Baby",
+							"institution": "Sony Music",
+							"balance": "10.00",
+						},
+						{
+							"name": "Lady Gaga",
+							"address": "#3, Upper East Side, New York",
+							"institution": "Capitol Records",
+							"balance": "50,000.00",
+						},
+						{
+							"name": "Elon Musk",
+							"address": "#5, Los Angeles, California",
+							"institution": "Tesla and Space X",
+							"balance": "10,000.00",
+						},
+						{
+							"name": "Donald Trump",
+							"address": "White House, Washington, DC",
+							"institution": "US Government",
+							"balance": "10,500.00",
+						},
+						{
+							"name": "Jungkook",
+							"address": "Gangnam, South Korea",
+							"institution": "Bangtan Boys",
+							"balance": "11,000.00",
+						},
+						{
+							"name": "Mocha Uson",
+							"address": "Mount Mayon, Naga, Philippines",
+							"institution": "Philippine Government",
+							"balance": "100,000.00",
+						},
+					]
+
+					var attendance = [];
+			        var email = document.querySelector('#cta').value;
+			        var a;
+			        if (a = attend[0].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[0].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[0].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[0].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[0].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[0].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else if (attend[1].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[1].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[1].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[1].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[1].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[1].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else if (attend[2].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[2].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[2].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[2].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[2].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[0].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else if (attend[3].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[3].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[3].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[3].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[3].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[0].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else if (attend[4].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[4].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[4].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[4].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[4].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[0].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else if (attend[5].name.includes(email)){
+			        	document.getElementById("nameAttendee").innerHTML = "Hello Attendee!";
+			        	document.getElementById("message").innerHTML = "Welcome to the event, " +attend[5].name+"!";
+			        	document.getElementById("message2").innerHTML = "Address: " +attend[5].address;
+			        	document.getElementById("message3").innerHTML = "Institution: " +attend[5].institution;
+			        	document.getElementById("message4").innerHTML = "Please settle your balance of PHP " +attend[5].balance+ " in the cashier area. Thank you!";
+			        	//attendance.push(attend[0].name);
+			        	//document.getElementById("showAttendee").innerHTML = attendance.toString();
+			        }else{
+			        	document.getElementById("nameAttendee").innerHTML = "Error";
+			        	document.getElementById("message").innerHTML = "Sorry, we did not find '" +email+ "' in our database of Pre-registered attendees. Please try another name.";
+			        }
+			        
+			    }			    
+			</script>
+
+
+
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+
+
+</html>
