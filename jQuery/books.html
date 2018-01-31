@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>jQ</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<style>
+.header{
+    display: none;
+}
+</style>
+</head>
+<body>
+    <form id="addToList">
+        Name: <input type="text" id="name"><br>
+        Email: <input type="text" id="email"><br>
+        Facebook: <input type="text" id="fb"><br>
+        LinkedIn: <input type="text" id="li"><br>
+        GitHub: <input type="text" id="gh"><br>
+        <input type="submit">
+    </form>
+    <a href="javascript:void(0);">Show</a>
+
+<script>
+function addToListViaAJAX(){
+    event.preventDefault();
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var fb = $('#fb').val();
+    var li = $('#li').val();
+    var gh = $('#gh').val();
+    var data = {
+        "name": name,
+        "email": email,
+        "facebook": fb,
+        "linkedin": li,
+        "github":gh
+    }
+    console.log(data);
+    console.log(JSON.stringify(data));
+    
+    $.ajax({type: "GET",
+      url: "http://api.oceandrivers.com/static/resources.json",
+      dataType: "json",
+      data: JSON.stringify(data),
+      contentType: 'application/json; charset=ut-8',
+      success: function(response) {
+            $('#name').val('');
+            $('#email').val('');
+            $('#fb').val('');
+            $('#li').val('');
+            $('#gh').val('');
+      },
+      error: function(xhr, status, e) {
+        console.log(status, e);
+      }
+    });
+
+}
+$('#addToList').on('submit', addToListViaAJAX);
+
+
+
+
+function onButtonClick() {
+    event.preventDefault();
+ console.log('clicked!');
+ $('div.header').slideToggle();
+};
+$('a').click(showBooks);
+$(document).on('keypress',function(e){console.log('key is pressed: '+e.keyCode)});
+
+function showBooks(){
+$.ajax({type: "GET",
+ url: "https://api.luciron.com/v1/vivixx",
+ dataType: "json",
+ success: function(response) {
+     console.table(response);
+   for (var i = 0; i < response.length; i++) {
+     var student = response[i];
+     var p = $('<p>');
+     p.html(student.name+'<br>&nbsp;&nbsp;&nbsp;&nbsp;email: <a href="mailto:'+student.email+'">Email!</a>'+'<br>&nbsp;&nbsp;&nbsp;&nbsp;Facebook: <a href="'+student.facebook+'">Facebook</a><br>');
+     $('body').append(p);
+   }
+ },
+ error: function(xhr, status, e) {
+   console.log(status, e);
+ }
+});
+}
+
+
+
+
+
+
+
+
+// var p = document.createElement('p');
+// p.appendChild(document.createTextNode('Welcome!'));
+// p.style.cssFloat = 'left';
+// p.style.backgroundColor = 'red';
+// p.className = 'special';
+// document.querySelector('div.header').appendChild(p);
+// <p style="float: left; background-color: red;" class="special">Welcome!</p>
+</script>
+</body>
+</html>
